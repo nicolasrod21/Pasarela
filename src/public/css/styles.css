@@ -1,0 +1,43 @@
+body {
+    background: #74ccf5;
+    /*font-family: 'Oswald', 'sans-serif';*/
+    overflow: hidden;
+}
+
+.index {
+    width: 100vw;
+    height: 100vh;
+}
+
+.masthead {
+    color: white;
+    min-height: 40rem;
+    width: 100%;
+    padding-top: 8rem;
+    background: url(/img/Background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masthead h1 {
+    font-size: 4rem;
+    margin: 0%;
+    padding: 0%;
+}
+
+@media (min-widht:992px){
+    .masthead h1 {
+        font-size: 5.5rem;
+    }
+}
+
+/* cambiar tipo de letra 
+nav.navbar ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ 
+/* cambiar el color de fondo a la barra 
+nav.navbar {
+    background-color: #1b1d1d;
+}*/

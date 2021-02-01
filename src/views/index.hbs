@@ -1,0 +1,39 @@
+{{!--<main class="index">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">Pasarela</h1>
+            <h3 class="mb-5">
+                <em>Conoce nuestros aplicativos</em>
+            </h3>
+            <a href="/signin" class="btn btn-primary">
+                Empecemos
+            </a>
+        </div>
+    </header>
+</main>--}}
+<div class="container p-5">
+    <div class="row">
+        {{#each links}}
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body animate__animated animate__fadeInDown">
+                        <img src="{{path}}" class="card-img-top">
+                        <a href="{{url}}" target="_blank">
+                            <h3 class="card-title text-uppercase">
+                                {{title}}
+                            </h3>
+                        </a>
+                        <p class="m-3">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay enlaces almacenados aún.</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
