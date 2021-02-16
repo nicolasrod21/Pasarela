@@ -1,3 +1,4 @@
+ <!-- BARRA DE NAVEGACIÓN DE TODA LAS VISTAS -->
 <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
   <div class="container">
     <div class="container-fluid">
@@ -32,7 +33,7 @@
               <a class="dropdown-item" href="/logout">Cerrar sesión</a>
             </div>
           </li>
-          {{else}}
+          {{else}} {{!-- si usuario no está logeado muestra la siguiente navegación --}}
             <li class="nav-item">
               <a href="/signin" class="nav-link">Iniciar sesión</a>
             </li>

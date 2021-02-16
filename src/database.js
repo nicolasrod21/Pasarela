@@ -1,8 +1,11 @@
+//SE REQUIERE EL MÓDULO DE CONEXIÓN DE LA BASE DE DATOS
 const mysql = require ('mysql');
 const {promisify} = require('util');
+//SE REQUIEREN LAS KEYS DE LA BASE DE DATOS PARA REALIZAR LA CONEXIÓN
 const {database} = require('./keys');
 const pool = mysql.createPool(database);
 
+// CONEXIÓN A LA BASE DE DATOS, MENSAJES DE ERROR PARA CADA CASO DE FALLO
 pool.getConnection((err, connection) =>{
     if(err){
         if (err.code == 'PROTOCOL_CONECTION_LOST'){

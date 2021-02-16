@@ -1,3 +1,4 @@
+//KEYS DE LA BASE DE DATOS
 module.exports = {
     database: {
         host: 'localhost',

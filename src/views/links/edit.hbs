@@ -1,8 +1,11 @@
+<!-- VISTA PARA EDITAR LA INFORMACIÓN DEL ENLACE AÑADIDO -->
 <div class="container-p4">
     <div class="col-md-4 mx-auto">
         <div class="card">
             <div class="card-body">
+<!-- SE LLAMA LA INFORMACIÓN ALMACENADA PARA QUE EL USUARIO TENGA LA POSIBILIDAD DE VER LA INFORMACIÓN QUE CAMBIARÁ -->
                 <form action="/links/edit/{{link.id}}" method="POST" enctype="multipart/form-data">
+<!-- SE UTILIZA EL MISMO MÉTODO DE SUBIDA DE IMAGENES, LLAMANDO LA IMAGEN QUE ESTÁ YA ALMANCEDA CON ESE ENLACE -->
                     <div class="form-group">
                     <img src="{{link.path}}" class="card-img-top" width="100" height="200">
                     </div> 

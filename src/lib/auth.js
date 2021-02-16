@@ -1,6 +1,6 @@
 // metodo de proteccion de rutas
 module.exports = {
-    //metodo de verificación ejecute la siguiente línea, sino redireccione al inicio de sesión
+//metodo de verificación ejecute la siguiente línea, sino redireccione al inicio de sesión
     isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) {
             return next();

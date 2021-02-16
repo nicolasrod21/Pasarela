@@ -3,6 +3,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const pool = require('../database');
 const helpers = require('../lib/helpers');
+//Métodos utilizados para el login y logout de usuarios
 
 passport.use('local.signin', new LocalStrategy({
     usernameField: 'username',
@@ -13,6 +14,7 @@ passport.use('local.signin', new LocalStrategy({
     const rows = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
     if (rows.length>0){
         const user = rows[0];
+        //se llama el método de validación de contraseñas
         const validpassword = await helpers.matchPassword(password, user.password);
         if (validpassword) {
             done(null, user, req.flash('success', 'Bienvenido ' + user.username));
@@ -24,6 +26,7 @@ passport.use('local.signin', new LocalStrategy({
     }
 }));
 
+//Registro de un nuevo usuario en la base de datos
 passport.use('local.signup', new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
@@ -35,6 +38,7 @@ passport.use('local.signup', new LocalStrategy({
         password,
         fullname
     }
+//se llama al método de encriptación de helpers para insertar la contraseña encriptada
     newUser.password = await helpers.encryptPassword(password);
     const result = await pool.query('INSERT INTO users SET ?' , [newUser]);
     newUser.id = result.insertId;

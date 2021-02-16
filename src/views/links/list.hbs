@@ -1,3 +1,6 @@
+ <!-- SE LLAMAN LOS ENLACES ALMACENADOS POR MEDIO DE UN CICLO, QUE RECORRA LA BASE DE DATOS, LLAMANDO CADA UNA DE SUS
+ PROPIEDADES COMO LO ES IMAGEN, URL, TITULO, DESCRIPCION, LISTANDO ASÍ EN TARJETAS TODOS LOS ENLACES QUE ALLÍ SE 
+ ENCUENTREN ALMACENADOS -->
 <div class="container p-4">
     <div class="row">
         {{#each links}}
@@ -12,12 +15,13 @@
                     </a>
                     <p class="m-3">{{description}}</p>
                     <p>{{timeago created_at}}</p>
-                    <a href="/links/delete/{{id}}" class="btn btn-danger">Eliminar</a>
-                    <a href="/links/edit/{{id}}" class="btn btn-secondary"> Editar </a>
+                    <a href="/links/delete/{{id}}" class="btn btn-danger">Eliminar</a><!-- Se le indica la ruta junto al id del enlace, utilizado para poder eliminar -->
+                    <a href="/links/edit/{{id}}" class="btn btn-secondary"> Editar </a><!-- Se le indica la ruta junto al id del enlace, utilizado para poder editar -->
                 </div>
             </div>
         </div>
         {{else}}
+ <!-- MENSAJE EN CASO DE QUE NO HAYA NINGÚN ENLACE ALMACENADO AÚN -->
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
                 <p>No hay enlaces almacenados aún.</p>
