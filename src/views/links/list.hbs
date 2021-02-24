@@ -1,33 +1,102 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./img/icons/style.css" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="icon" href="img/TICsinfondo.ico" type="image/png" />
+    <title>OTICS Girardot</title>
+</head>
+<body>
+<!-- HEADER 
+    <header>
+        <div class="container">
+            <header>
+                <i class="icon-menu" id="burguerBtn"></i>
+                <img src="./img/OTICsinfondo.png" alt="Logotipo OTIC"
+                    title="Oficina de las tecnologías de la información y las comunicaciones " />
+        </div>
+    </header>
+IMAGEN SUPERIOR -->
+    <div class="image">
+        <img class="escudo" src="./img/escudo.png" alt="Escudo de Girardot" title="Girardot - Cundinamarca" />
+        <p class="letter">OTIC Girardot</p>
+    </div>
+
+    <div class="logoMobile">
+        <img src="./img/escudoLetrado.png" alt="Escudo de Girardot" />
+    </div>
+<!-- FIN IMAGEN SUPERIOR -->
+    <section class="accesos">
+      <div class="tittle">
+        <h2>APPS OTIC</h2>
+        <img src="./img/server.svg" alt="" />
+      </div>
  <!-- SE LLAMAN LOS ENLACES ALMACENADOS POR MEDIO DE UN CICLO, QUE RECORRA LA BASE DE DATOS, LLAMANDO CADA UNA DE SUS
  PROPIEDADES COMO LO ES IMAGEN, URL, TITULO, DESCRIPCION, LISTANDO ASÍ EN TARJETAS TODOS LOS ENLACES QUE ALLÍ SE 
  ENCUENTREN ALMACENADOS -->
-<div class="container p-4">
-    <div class="row">
-        {{#each links}}
-        <div class="col-md-3">
-            <div class="card text-center">
-                <div class="card-body animate__animated animate__fadeInDown">
-                    <img src="{{path}}" class="card-img-top">
-                    <a href="{{url}}" target="_blank">
-                        <h3 class="card-title text-uppercase">
-                        {{title}}
-                        </h3>
-                    </a>
-                    <p class="m-3">{{description}}</p>
-                    <p>{{timeago created_at}}</p>
-                    <a href="/links/delete/{{id}}" class="btn btn-danger">Eliminar</a><!-- Se le indica la ruta junto al id del enlace, utilizado para poder eliminar -->
-                    <a href="/links/edit/{{id}}" class="btn btn-secondary"> Editar </a><!-- Se le indica la ruta junto al id del enlace, utilizado para poder editar -->
+        <div class="container p-4">
+            <div class="row">
+                {{#each links}}
+                <div class="col-md-4">
+                    <div class="card border-0 text-center">
+                        <div class="card-body animate__animated animate__fadeInDown">
+                            <img src="{{path}}" class="card-img-top">
+                            <a href="{{url}}" target="_blank">
+                                <h3 class="card-title text-uppercase">
+                                    {{title}}
+                                </h3>
+                            </a>
+                            <p class="m-3">{{description}}</p>
+                            <a href="/links/delete/{{id}}" class="btn btn-danger">Eliminar</a>
+                            <!-- Se le indica la ruta junto al id del enlace, utilizado para poder eliminar -->
+                            <a href="/links/edit/{{id}}" class="btn btn-secondary"> Editar </a>
+                            <!-- Se le indica la ruta junto al id del enlace, utilizado para poder editar -->
+                        </div>
+                    </div>
+                    </br>
                 </div>
+                {{else}}
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body text-center">
+                        <p>No hay aplicativos almacenados aún.</p>
+                        <a href="/links/add" target="blank_">Crea uno</a>
+                    </div>
+                </div>
+                {{/each}}
             </div>
         </div>
-        {{else}}
- <!-- MENSAJE EN CASO DE QUE NO HAYA NINGÚN ENLACE ALMACENADO AÚN -->
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>No hay enlaces almacenados aún.</p>
-                <a href="/links/add">crea uno!</a>
-            </div>
-        </div>   
-        {{/each}}
-    </div>
-</div>
+    </section>
+    <div class="background"></div>
+    <!-- INICIO footer -->
+    <footer>
+        <img class="gdtDeTodos" src="./img/image001.png" alt="Logo Girardot es de todos" />
+    
+        <div class="text">
+            <p>
+                Oficina de las tecnologías de la informaci&oacute;n y las
+                comunicaciones
+            </p>
+            <p>Alcald&iacute;a Municipal De Girardot</p>
+            <p>Cl. 17 #10-48, Piso 4</p>
+            <p>Girardot es de todos</p>
+            <p>Cont&aacute;ctenos</p>
+        </div>
+    
+        <div class="redes">
+            <a href="https://www.facebook.com/AlcaldiadeGirardotOficial/" class="icon-facebook" target="_blanck"></a>
+            <a href="https://www.instagram.com/alcaldiadegirardot/?igshid=1bh8ipmb6vu79" class="icon-instagram"
+                target="_blanck"></a>
+            <a class="icon-envelop" href="mailto:contactenos@girardot-cundinamarca.gov.co"></a>
+        </div>
+    </footer>
+    <!-- FIN footer --> 
+    <script src="./js/app.js"></script>
+</body>

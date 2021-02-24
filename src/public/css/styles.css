@@ -1,7 +1,40 @@
+/*
+#icon {
+    display: inline-block;
+    padding-top: .7em;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+header {
+    position: relative;
+    background-color: #77defd;
+    padding: 10em 0 8em;
+    z-index: 2;
+    text-align: ;
+    font-size: 4em;
+    text-transform: uppercase;
+
+    
+}
+  
+  #about {
+    background: #E7E3DA;
+    height: 70em;
+    padding: 5em 0;
+    /*p {
+      line-height: 2em;
+      font-size: 1.4em;
+      margin: 0;
+      color: #222;
+    }
+  }
 body {
     background: #74ccf5;
-    /*font-family: 'Oswald', 'sans-serif';*/
+    /*font-family: 'Oswald', 'sans-serif';
     overflow: hidden;
+    /*background-image: url(../img/lema.png);
 }
 
 .index {
@@ -9,22 +42,7 @@ body {
     height: 100vh;
 }
 
-.masthead {
-    color: white;
-    min-height: 40rem;
-    width: 100%;
-    padding-top: 8rem;
-    background: url(/img/Background.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.masthead h1 {
-    font-size: 4rem;
-    margin: 0%;
-    padding: 0%;
-}
 
 @media (min-widht:992px){
     .masthead h1 {
@@ -32,12 +50,601 @@ body {
     }
 }
 
-/* cambiar tipo de letra 
+
+ cambiar tipo de letra 
 nav.navbar ul.nav li {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
- 
-/* cambiar el color de fondo a la barra 
+*/
+/*cambiar el color de fondo a la barra */
 nav.navbar {
-    background-color: #1b1d1d;
-}*/
+    background-color: #00aff0;
+    lighting-color: white;
+}
+
+@keyframes show {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes hide {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@keyframes active {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+@keyframes giroEscudo {
+    0% {
+        width: 80px;
+    }
+
+    50% {
+        width: 100px;
+    }
+
+    100% {
+        width: 80px;
+    }
+}
+
+@keyframes escudoEntrance {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 250px;
+    }
+}
+
+@keyframes entranceOTIC {
+    from {
+        right: -50%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height    : auto;
+        flex-wrap : wrap;
+        text-align: center;
+    }
+
+    header img {
+        margin: auto;
+    }
+}
+
+* {
+    margin    : 0;
+    box-sizing: border-box;
+    padding   : 0;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.123);
+}
+
+body {
+    font-family          : "Roboto", sans-serif;
+    background-image     : url(../img/LetrasGirardot2.jpg);
+    background-position  : center;
+    background-attachment: fixed;
+    background-repeat    : no-repeat;
+    background-size      : cover;
+}
+
+header {
+    width           : 100%;
+    height          : 50px;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    background-color: #00aff0;
+    padding         : 0;
+    margin          : 0;
+    box-sizing      : border-box;
+}
+
+header i {
+    display: none;
+}
+
+header img {
+    width      : 100px;
+    margin-left: 15px;
+}
+
+header .menu-container {
+    height : 100%;
+    display: flex;
+}
+
+header .menu-container .menu {
+    list-style     : none;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 100%;
+}
+
+header .menu-container .menu li {
+    height     : 100%;
+    display    : flex;
+    align-items: center;
+    position   : relative;
+}
+
+header .menu-container .menu li .smenu {
+    position  : absolute;
+    top       : 130%;
+    visibility: hidden;
+    opacity   : 0;
+    transition: all 300ms ease;
+}
+
+header .menu-container .menu li:hover .smenu {
+    top                       : 100%;
+    visibility                : visible;
+    opacity                   : 1;
+    z-index                   : 10;
+    background-color          : #00aff0;
+    border-bottom-left-radius : 15px;
+    border-bottom-right-radius: 15px;
+}
+
+header .menu-container .menu li:hover .smenu a {
+    width        : 100%;
+    text-align   : center;
+    margin       : auto;
+    border-radius: 5px;
+}
+
+header .menu-container .menu li a {
+    display   : block;
+    height    : 100%;
+    padding   : 17px 10px;
+    color     : #fff;
+    transition: all 300ms ease;
+}
+
+header .menu-container .menu li a:hover {
+    background: #030336;
+    color     : #fff;
+}
+
+header .menu-container .menu li .smenu {
+    position  : absolute;
+    top       : 130%;
+    visibility: hidden;
+    opacity   : 0;
+    transition: all 300ms ease;
+}
+
+header .menu-container .menu li .smenu li {
+    position: relative;
+    display : block;
+    width   : 140px;
+}
+
+.menuMobile {
+    display: none;
+}
+
+.image {
+    width                : 100%;
+    background-image     : url(../img/girardot.jpg);
+    height               : 400px;
+    background-position  : center;
+    background-repeat    : no-repeat;
+    background-size      : cover;
+    background-attachment: fixed;
+    position             : relative;
+    overflow             : hidden;
+}
+
+.image .escudo {
+    position                 : absolute;
+    width                    : 80px;
+    bottom                   : 20px;
+    right                    : 250px;
+    animation-name           : escudoEntrance;
+    animation-duration       : 1.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode      : both;
+    animation-iteration-count: 1;
+}
+
+.image .escudo:hover {
+    animation-name           : giroEscudo;
+    animation-duration       : 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode      : both;
+}
+
+.image .letter {
+    font-size                : 2em;
+    background-color         : #00aff0;
+    opacity                  : 0.8;
+    padding                  : 15px;
+    color                    : #fff;
+    position                 : absolute;
+    border-radius            : 15px;
+    bottom                   : 30px;
+    right                    : 0;
+    font-style               : italic;
+    animation-name           : entranceOTIC;
+    animation-duration       : 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode      : both;
+}
+
+.logoMobile {
+    display: none;
+}
+
+.accesos {
+    width                : 100%;
+    height               : auto;
+    background-image     : url(../img/email-pattern.png);
+    background-repeat    : repeat;
+    background-attachment: fixed;
+}
+
+.accesos .tittle {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    margin-bottom  : 15px;
+}
+
+.accesos .tittle h2 {
+    text-align   : center;
+    margin-bottom: 15px;
+    font-size    : 2.5em;
+    padding      : 20px;
+}
+
+.accesos .tittle img {
+    width: 60px;
+}
+
+.accesos .container {
+    width: 100%;
+}
+
+.accesos .container .container-row {
+    width          : 90%;
+    margin         : auto;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+    margin-bottom  : 15px;
+    padding        : 25px;
+}
+
+.accesos .container .container-row a {
+    text-decoration: none;
+    color          : #1f2041;
+}
+
+.accesos .container .container-row a:hover {
+    color : #525252;
+    cursor: pointer;
+}
+
+.accesos .container .container-row a img {
+    width         : 300px;
+    height        : 200px;
+    vertical-align: top;
+}
+
+.accesos .container .container-row a img:hover {
+    transform: scale(1.1);
+}
+
+.accesos .container .container-row a p {
+    text-align: center;
+    padding   : 10px;
+    font-size : 1.2em;
+}
+
+.accesos .container .container-row a p:hover {
+    transform: scale(1.1);
+}
+
+.background {
+    width : 100%;
+    height: 400px;
+}
+
+footer {
+    width          : 100%;
+    height         : auto;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    color          : #fff;
+    font-weight    : 700;
+    text-align     : center;
+    padding        : 20px;
+    font-size      : 1.2em;
+    position       : relative;
+}
+
+footer p {
+    margin-top: 5px;
+}
+
+footer .redes {
+    margin-top      : 10px;
+    padding         : 10px;
+    position        : sticky;
+    left            : 0;
+    background-color: #00aff0;
+    padding         : 15px;
+    border-radius   : 15px;
+}
+
+footer .redes a {
+    color          : #fff;
+    text-decoration: none;
+    font-size      : 2em;
+    padding        : 10px;
+    border-radius  : 10px;
+}
+
+footer .redes .icon-facebook:hover {
+    background-color: #3b5998;
+}
+
+footer .redes .icon-envelop:hover {
+    background-color: #949396;
+}
+
+footer .redes .icon-instagram:hover {
+    background-color: #833ab4;
+}
+
+footer .escudo {
+    position: absolute;
+    width   : 110px;
+    left    : 10px;
+    bottom  : 0;
+}
+
+footer .gdtDeTodos {
+    width   : 330px;
+    position: relative;
+    right   : 0;
+    bottom  : 0;
+}
+
+@media screen and (max-width: 900px) {
+    .image {
+        background-size    : contain;
+        background-repeat  : no-repeat;
+        background-position: top;
+        height             : 500px;
+    }
+
+    .menu-container .menu:active .smenu li {
+        top                       : 100%;
+        visibility                : visible;
+        opacity                   : 1;
+        z-index                   : 10;
+        background-color          : #00aff0;
+        border-bottom-left-radius : 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .menu-container .menu:active .smenu li a {
+        width        : 100%;
+        text-align   : center;
+        margin       : auto;
+        border-radius: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer .text {
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background: none;
+    }
+
+    .hide {
+        left                     : -100%;
+        animation-name           : hide;
+        animation-duration       : 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode      : both;
+    }
+
+    .active {
+        left                     : 0;
+        display                  : block;
+        animation-name           : show;
+        animation-duration       : 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode      : both;
+    }
+
+    .menuMobile {
+        width           : 100%;
+        height          : auto;
+        opacity         : 0.9;
+        background-color: #00aff0;
+        position        : absolute;
+        top             : 50px;
+        z-index         : 3;
+    }
+
+    .menuMobile ul {
+        list-style: none;
+    }
+
+    .menuMobile ul li {
+        width        : 90%;
+        margin       : auto;
+        padding      : 20px;
+        border-bottom: 1px solid #ffffff;
+        position     : relative;
+    }
+
+    .menuMobile ul li a {
+        color          : #fff;
+        text-decoration: none;
+        transition     : all 300ms ease;
+    }
+
+    .menuMobile ul li a:active {
+        background: #030336;
+        color     : #fff;
+    }
+
+    .menuMobile ul li .smenu li a {
+        color  : #fff;
+        display: inline-block;
+        padding: 10px;
+        width  : 100%;
+        height : 100%;
+    }
+
+    .menuMobile ul li .smenu li a:active {
+        text-decoration : underline;
+        background-color: #030336;
+        border-radius   : 5px;
+    }
+
+    .menuMobile ul li:last-child {
+        border-bottom: none;
+    }
+
+    header {
+        display        : flex;
+        justify-content: space-around;
+        position       : fixed;
+        width          : 100%;
+        z-index        : 2;
+        box-sizing     : border-box;
+    }
+
+    header i {
+        display  : block;
+        color    : #fff;
+        font-size: 2em;
+        cursor   : pointer;
+    }
+
+    header i:hover {
+        color: #949396;
+    }
+
+    header img {
+        margin: 0;
+    }
+
+    header .menu-container {
+        display: none;
+    }
+
+    .image {
+        z-index            : 1;
+        height             : 200px;
+        background-size    : contain;
+        background-repeat  : no-repeat;
+        background-position: top;
+    }
+
+    .image .escudo {
+        display: none;
+    }
+
+    .image .letter {
+        font-size: 1em;
+        padding  : 10px;
+    }
+
+    .logoMobile {
+        display   : block;
+        width     : 100%;
+        text-align: center;
+    }
+
+    .logoMobile img {
+        width : 100px;
+        margin: 15px auto;
+    }
+
+    .accesos {
+        width: 100%;
+    }
+
+    .accesos .container {
+        width: 100%;
+    }
+
+    .accesos .container .container-row {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+    }
+
+    .background {
+        height          : 200px;
+        background-image: url(../img/puenteferreo.jpg);
+        background-size : cover;
+    }
+
+    footer {
+        width         : 100%;
+        overflow      : hidden;
+        box-sizing    : border-box;
+        flex-direction: column;
+        background    : linear-gradient(to bottom right, #001060, #0060da, #459e00);
+    }
+
+    footer .text {
+        margin: 20px 0;
+    }
+}
