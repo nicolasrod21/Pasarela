@@ -15,6 +15,16 @@ router.post('/signup', passport.authenticate('local.signup',{
     failureRedirect: '/signup', //Fallo al iniciar sesión redirecciona a la misma pestaña de registro de usuario
     failureFlash: true //si falla muestre el mensaje flash de fallo
 }));
+
+router.get('/chpass', isLoggedIn, (req, res) =>{
+    res.render('auth/chpass');
+});
+
+router.post('/chpass', passport.authenticate('local.chpass', {
+    successRedirect: '/profile',//Registro exitoso redirecciona al perfil
+    failureRedirect: '/chpass', //Fallo al iniciar sesión redirecciona a la misma pestaña de registro de usuario
+    failureFlash: true //si falla muestre el mensaje flash de fallo
+}));
 // vista de inicio de sesión de usuarios, ruta protegida solo permite ingresar sin haber logeado previamente
 router.get('/signin', isNotLoggedIn, (req, res) =>{
     res.render('auth/signin');
@@ -27,10 +37,12 @@ router.post('/signin', isNotLoggedIn, (req, res, next) =>{
         failureFlash: true //si falla muestre el mensaje flash de fallo
     })(req, res, next);
 });
+
 //Ruta protegida solo para usuarios logeados
 router.get('/profile', isLoggedIn, (req, res) =>{
     res.render('profile');//Se obtiene la ruta de perfil
 });
+
 
 router.get('/logout', isLoggedIn, (req, res) => {
     req.logOut(); // metodo de passport, que permite eliminar la sesión

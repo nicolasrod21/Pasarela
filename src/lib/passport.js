@@ -45,6 +45,19 @@ passport.use('local.signup', new LocalStrategy({
     return done(null, newUser);
 }));
 
+passport.use('local.chpass', new LocalStrategy({
+    passwordField: 'newPass',
+    passReqToCallback: true,
+}, async (newPass, done) =>{
+    const newPass = {
+        newPass,
+    }
+//se llama al método de encriptación de helpers para insertar la contraseña encriptada
+    newUser.password = await helpers.encryptPassword(newPass);
+    const result = await pool.query('UPDATE users SET ? WHERE id = ?' , [newPass]);
+    newPass.id = result.insertId;
+    return done(null, newPass);
+}));
 passport.serializeUser((user, done) =>{
     done(null, user.id);
 });

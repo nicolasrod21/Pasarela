@@ -1,85 +1,86 @@
  <!-- BARRA DE NAVEGACIÓN DE TODA LAS VISTAS -->
 <nav class="navbar navbar-expand-lg  navbar-dark bg-#00aff0">
   {{#if user}} {{!-- si usuario está logeado muestra la siguiente navegación --}}
-  <div class="container">
-    <div class="container-fluid">
-      <img src="./img/OTICsinfondo.png" alt="Logotipo OTIC" style="margin-right: 10px; margin-left: -60px; margin-top: -13px; height: 45px; width: 8%;"
-      title="Oficina de las tecnologías de la información y las comunicaciones " />
-      <a class="navbar-brand" href="/links" style="color: white; font-size: 26px;">Pasarela</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"></li>
-            <a class="nav-link" href="https://www.girardot-cundinamarca.gov.co/Paginas/Inicio.aspx" target="_blank" style="color: white; font-size: 19px;">
-            Alcaldía de Girardot
-            </a>
-            </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 19px;">
-              Dominios
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/links">Todos los dominios</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/links/add">Agregar un nuevo aplicativo</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 19px;">
-              Cuenta
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/profile">Perfil</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/signup">Registrar nuevo usuario</a>
-              <a class="dropdown-item" href="/logout">Cerrar sesión</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-{{else}} {{!-- si usuario no está logeado muestra la siguiente navegación --}}
-  <div class="container">
-    <div class="container-fluid">
-      <img src="./img/OTICsinfondo.png" alt="Logotipo OTIC" style="margin-right: 10px; margin-left: -60px; margin-top: -13px; height: 45px; width: 8%;"
-      title="Oficina de las tecnologías de la información y las comunicaciones " />
-      <a class="navbar-brand" href="/" style="color: white; font-size: 26px;">Pasarela</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+    <div class="container">
+      <div class="container-fluid">
+        <img src="./img/OTICsinfondo.png" alt="Logotipo OTIC" style="margin-right: 10px; margin-left: -60px; margin-top: -13px; height: 45px; width: 8%;"
+        title="Oficina de las tecnologías de la información y las comunicaciones " />
+        <a class="navbar-brand" href="/links" style="color: white; font-size: 26px;">Pasarela</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item"></li>
-            <a class="nav-link" href="https://www.girardot-cundinamarca.gov.co/Paginas/Inicio.aspx" target="_blank" style="color: white; font-size: 19px;">
-            Alcaldía de Girardot
-            </a>
-            </li>
-            <li class="nav-item"></li>
-            <a class="nav-link" href="" style="color: white; font-size: 19px;">Quiénes somos</a>
-            </li>
-            <!--<li class="nav-item">
-              <a href="/signin" class="nav-link">Iniciar sesión</a>
-            </li>-->
+              <a class="nav-link" href="https://www.girardot-cundinamarca.gov.co/Paginas/Inicio.aspx" target="_blank" style="color: white; font-size: 19px;">
+              Alcaldía de Girardot
+              </a>
+              </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 19px;">
-              Dominios
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/">Todos los aplicativos</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/signin">Inicia sesión</a>
-            </div>
-          </li>
-        </ul>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 19px;">
+                Dominios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/links">Todos los dominios</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/links/add">Agregar un nuevo aplicativo</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 19px;">
+                Cuenta
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/profile">Perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/signup">Registrar nuevo usuario</a>
+                <a class="dropdown-item" href="/chpass">Cambiar contraseña</a>
+                <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-{{/if}} 
+  {{else}} {{!-- si usuario no está logeado muestra la siguiente navegación --}}
+    <div class="container">
+      <div class="container-fluid">
+        <img src="./img/OTICsinfondo.png" alt="Logotipo OTIC" style="margin-right: 10px; margin-left: -60px; margin-top: -13px; height: 45px; width: 8%;"
+        title="Oficina de las tecnologías de la información y las comunicaciones " />
+        <a class="navbar-brand" href="/" style="color: white; font-size: 26px;">Pasarela</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item"></li>
+              <a class="nav-link" href="https://www.girardot-cundinamarca.gov.co/Paginas/Inicio.aspx" target="_blank" style="color: white; font-size: 19px;">
+              Alcaldía de Girardot
+              </a>
+              </li>
+              <li class="nav-item"></li>
+              <a class="nav-link" href="" style="color: white; font-size: 19px;">Quiénes somos</a>
+              </li>
+              <!--<li class="nav-item">
+                <a href="/signin" class="nav-link">Iniciar sesión</a>
+              </li>-->
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 19px;">
+                Dominios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/">Todos los aplicativos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/signin">Inicia sesión</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  {{/if}} 
 </nav>

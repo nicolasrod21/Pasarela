@@ -1,0 +1,24 @@
+<!-- VISTA PARA EDITAR LA INFORMACIÓN DEL ENLACE AÑADIDO -->
+<div class="container-p4">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-body">
+<!-- SE LLAMA LA INFORMACIÓN ALMACENADA PARA QUE EL USUARIO TENGA LA POSIBILIDAD DE VER LA INFORMACIÓN QUE CAMBIARÁ -->
+                <form action="/chpass/{{user.id}}" method="POST">
+<!-- SE UTILIZA EL MISMO MÉTODO DE SUBIDA DE IMAGENES, LLAMANDO LA IMAGEN QUE ESTÁ YA ALMANCEDA CON ESE ENLACE -->
+                   <div class="form-group">
+                        <input type="text" class="form-control" name="savedpass" placeholder="Escriba la contraseña anterior" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="newPass" class="form-control" placeholder="URL">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

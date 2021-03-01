@@ -31,7 +31,7 @@ router.post('/add', isLoggedIn, async (req, res)=>{
         size
     };
     await pool.query('INSERT INTO links set ?', [newlink]);//Se inserta la constante con todos los datos almacenados a la base de datos
-    req.flash('success', 'Enlace almacenado correctamente');//Mensaje flash indicando proceso realizado exitosamente
+    //req.flash('success', 'Enlace almacenado correctamente');//Mensaje flash indicando proceso realizado exitosamente
     console.log(newlink);
     res.redirect('/links');//redirección a la vista links posterior al proceso exitoso
 });
@@ -50,7 +50,7 @@ router.get('/delete/:id', isLoggedIn, async (req, res) => {//se indica en la rut
     await pool.query('DELETE FROM links WHERE ID = ?', [id]);//Se hace la petición a la base de datos para eliminar todos los datos de ese id
     const parseImage = JSON.parse(JSON.stringify(image)); //Se convierte en un json los datos almacenados previamente para poder utilizarlos
     await unlink(filepath.resolve('./src/public' + parseImage[0].path));//Se llama el método unlink encargado de eliminar las imágenes en la carpeta local, por medio del path obtenido del json
-    req.flash('success', 'Enlace removido correctamente'),//Proceso realizado exitosamente
+    //req.flash('success', 'Enlace removido correctamente'),//Proceso realizado exitosamente
     res.redirect('/links');//Redirecciona a la vista links
 });
 //Se obtiene la ruta ediar
@@ -81,9 +81,8 @@ router.post('/edit/:id', isLoggedIn, async (req, res) =>{
         size
     };
     console.log(newlink);
-    await pool.query('UPDATE links SET ? WHERE id = ?', [newlink, id]);/*Se le indica a la base de datos que se quiere actualizar los 
-    datos de ese id que le estamos indicando con los datos almacenados en la constante newlink*/
-    req.flash('success', 'Actualizado satisfactoriamente'),//Mensaje flash de proceso realizado exitosamente
+    await pool.query('UPDATE links SET ? WHERE id = ?', [newlink, id]);/*Se le indica a la base de datos que se quiere actualizar los datos de ese id que le estamos indicando con los datos almacenados en la constante newlink*/
+    //req.flash('success', 'Actualizado satisfactoriamente'),//Mensaje flash de proceso realizado exitosamente
     res.redirect('/links');//Redirecciona a la vista links posteriormente al proceso realizado
 });
 //Se exportan las rutas
