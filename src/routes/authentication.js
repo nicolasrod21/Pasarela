@@ -15,16 +15,16 @@ router.post('/signup', passport.authenticate('local.signup',{
     failureRedirect: '/signup', //Fallo al iniciar sesión redirecciona a la misma pestaña de registro de usuario
     failureFlash: true //si falla muestre el mensaje flash de fallo
 }));
-
+/*
 router.get('/chpass', isLoggedIn, (req, res) =>{
     res.render('auth/chpass');
-});
-
+});*/
+/*
 router.post('/chpass', passport.authenticate('local.chpass', {
     successRedirect: '/profile',//Registro exitoso redirecciona al perfil
     failureRedirect: '/chpass', //Fallo al iniciar sesión redirecciona a la misma pestaña de registro de usuario
     failureFlash: true //si falla muestre el mensaje flash de fallo
-}));
+}));*/
 // vista de inicio de sesión de usuarios, ruta protegida solo permite ingresar sin haber logeado previamente
 router.get('/signin', isNotLoggedIn, (req, res) =>{
     res.render('auth/signin');

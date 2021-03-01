@@ -44,8 +44,7 @@ passport.use('local.signup', new LocalStrategy({
     newUser.id = result.insertId;
     return done(null, newUser);
 }));
-
-passport.use('local.chpass', new LocalStrategy({
+/*passport.use('local.chpass', new LocalStrategy({
     passwordField: 'newPass',
     passReqToCallback: true,
 }, async (newPass, done) =>{
@@ -57,7 +56,7 @@ passport.use('local.chpass', new LocalStrategy({
     const result = await pool.query('UPDATE users SET ? WHERE id = ?' , [newPass]);
     newPass.id = result.insertId;
     return done(null, newPass);
-}));
+}));*/
 passport.serializeUser((user, done) =>{
     done(null, user.id);
 });
